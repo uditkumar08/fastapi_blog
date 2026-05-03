@@ -28,7 +28,7 @@ posts: list[dict] = [
 
 
 @app.get("/",response_class=HTMLResponse,include_in_schema=False)   ## include_in_schema->basically want o exclude from fastapi docs
-@app.get("/posts",response_class=HTMLResponse)
+@app.get("/posts",response_class=HTMLResponse,include_in_schema=False)
 def home():
     return f"<h1>{posts[0]['title']}</h1>"
 

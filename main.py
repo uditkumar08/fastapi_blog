@@ -33,7 +33,7 @@ posts: list[dict] = [
 @app.get("/",include_in_schema=False)   ## include_in_schema->basically want o exclude from fastapi docs
 @app.get("/posts",include_in_schema=False)
 def home(request:Request):
-    return templates.TemplateResponse(request,"home.html",{"posts":posts})
+    return templates.TemplateResponse(request,"home.html",{"posts":posts , "title":"New"})
 
 
 @app.get("/api/posts")
